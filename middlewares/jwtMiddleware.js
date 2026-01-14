@@ -13,7 +13,7 @@ const jwtMiddleware = (req, res, next) => {
 
   try {
     if (token) {
-      let decodedData = jwt.verify(token, process.env.jwtsecretKey);
+      let decodedData = jwt.verify(token, process.env.jwtSecretKey);
 
       if (decodedData) {
         req.user = decodedData.email;
